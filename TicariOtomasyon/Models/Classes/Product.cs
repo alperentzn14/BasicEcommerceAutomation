@@ -30,6 +30,7 @@ namespace TicariOtomasyon.Models.Classes
         public string ProductImage { get; set; }
 
         public Category Category { get; set; }
-        public SalesMove SalesMove { get; set; }
+      
+        public ICollection<SalesMove> SalesMoves { get; set; }
     }
 }

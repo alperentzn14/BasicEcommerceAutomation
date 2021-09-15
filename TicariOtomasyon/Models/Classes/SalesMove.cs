@@ -11,16 +11,14 @@ namespace TicariOtomasyon.Models
     {
         [Key]
         public int SalesMoveId { get; set; }
-        //product
-        //current
-        //person
+  
         public DateTime Date { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
         public decimal Total { get; set; }
 
-        public  ICollection<Product> Products { get; set; }
-        public  ICollection<Current> Currents { get; set; }
-        public  ICollection<Person> Persons { get; set; }
+        public  Product Products { get; set; }
+        public  Current Currents { get; set; }
+        public  Person Persons { get; set; }
     }
 }

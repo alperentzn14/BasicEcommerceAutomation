@@ -30,6 +30,6 @@ namespace TicariOtomasyon.Models.Classes
         public string CurrentMail { get; set; }
 
 
-        public SalesMove SalesMove { get; set; }
+        public ICollection<SalesMove> SalesMoves { get; set; }
     }
 }

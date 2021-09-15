@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -26,6 +27,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.2</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -158,13 +160,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202109141842531_Migrations.cs" />
-    <Compile Include="Migrations\202109141842531_Migrations.designer.cs">
-      <DependentUpon>202109141842531_Migrations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Classes\Admin.cs" />
@@ -191,6 +190,66 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="web\.gitignore" />
+    <Content Include="web\build\config\postcss.config.js" />
+    <Content Include="web\build\config\rollup.config.js" />
+    <Content Include="web\build\js\AdminLTE.js" />
+    <Content Include="web\build\js\CardRefresh.js" />
+    <Content Include="web\build\js\CardWidget.js" />
+    <Content Include="web\build\js\ControlSidebar.js" />
+    <Content Include="web\build\js\DirectChat.js" />
+    <Content Include="web\build\js\Dropdown.js" />
+    <Content Include="web\build\js\Layout.js" />
+    <Content Include="web\build\js\PushMenu.js" />
+    <Content Include="web\build\js\SiteSearch.js" />
+    <Content Include="web\build\js\Toasts.js" />
+    <Content Include="web\build\js\TodoList.js" />
+    <Content Include="web\build\js\Treeview.js" />
+    <Content Include="web\build\npm\DocsPlugins.js" />
+    <Content Include="web\build\npm\DocsPublish.js" />
+    <Content Include="web\build\npm\Plugins.js" />
+    <Content Include="web\build\npm\Publish.js" />
+    <Content Include="web\dist\401.html" />
+    <Content Include="web\dist\404.html" />
+    <Content Include="web\dist\500.html" />
+    <Content Include="web\dist\assets\demo\chart-area-demo.js" />
+    <Content Include="web\dist\assets\demo\chart-bar-demo.js" />
+    <Content Include="web\dist\assets\demo\chart-pie-demo.js" />
+    <Content Include="web\dist\assets\demo\datatables-demo.js" />
+    <Content Include="web\dist\assets\img\error-404-monochrome.svg" />
+    <Content Include="web\dist\charts.html" />
+    <Content Include="web\dist\css\1.png" />
+    <Content Include="web\dist\css\styles.css" />
+    <Content Include="web\dist\index.html" />
+    <Content Include="web\dist\js\scripts.js" />
+    <Content Include="web\dist\layout-sidenav-light.html" />
+    <Content Include="web\dist\layout-static.html" />
+    <Content Include="web\dist\login.html" />
+    <Content Include="web\dist\password.html" />
+    <Content Include="web\dist\register.html" />
+    <Content Include="web\dist\tables.html" />
+    <Content Include="web\index.html" />
+    <Content Include="web\index2.html" />
+    <Content Include="web\index3.html" />
+    <Content Include="web\scripts\build-assets.js" />
+    <Content Include="web\scripts\build-pug.js" />
+    <Content Include="web\scripts\build-scripts.js" />
+    <Content Include="web\scripts\build-scss.js" />
+    <Content Include="web\scripts\clean.js" />
+    <Content Include="web\scripts\render-assets.js" />
+    <Content Include="web\scripts\render-pug.js" />
+    <Content Include="web\scripts\render-scripts.js" />
+    <Content Include="web\scripts\render-scss.js" />
+    <Content Include="web\scripts\sb-watch.js" />
+    <Content Include="web\scripts\start-debug.js" />
+    <Content Include="web\scripts\start.js" />
+    <Content Include="web\src\assets\demo\chart-area-demo.js" />
+    <Content Include="web\src\assets\demo\chart-bar-demo.js" />
+    <Content Include="web\src\assets\demo\chart-pie-demo.js" />
+    <Content Include="web\src\assets\demo\datatables-demo.js" />
+    <Content Include="web\src\assets\img\error-404-monochrome.svg" />
+    <Content Include="web\src\js\scripts.js" />
+    <Content Include="web\starter.html" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -216,6 +275,140 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="web\.babelrc" />
+    <Content Include="web\.browserslistrc" />
+    <Content Include="web\.editorconfig" />
+    <Content Include="web\.eslintignore" />
+    <Content Include="web\.eslintrc" />
+    <Content Include="web\.github\ISSUE_TEMPLATE\bug-report-for-adminlte-v2-4-x.md" />
+    <Content Include="web\.github\ISSUE_TEMPLATE\bug-report-for-adminlte-v3-x.md" />
+    <Content Include="web\.github\ISSUE_TEMPLATE\feature-request-for-adminlte-v3-x.md" />
+    <Content Include="web\.npmignore" />
+    <Content Include="web\.travis.yml" />
+    <Content Include="web\build\js\.jscsrc" />
+    <Content Include="web\build\scss\.csslintrc" />
+    <Content Include="web\build\scss\AdminLTE-components.scss" />
+    <Content Include="web\build\scss\AdminLTE-core.scss" />
+    <Content Include="web\build\scss\AdminLTE-extra-components.scss" />
+    <Content Include="web\build\scss\AdminLTE-pages.scss" />
+    <Content Include="web\build\scss\AdminLTE-plugins.scss" />
+    <Content Include="web\build\scss\AdminLTE-raw.scss" />
+    <Content Include="web\build\scss\AdminLTE.scss" />
+    <Content Include="web\build\scss\mixins\_accent.scss" />
+    <Content Include="web\build\scss\mixins\_backgrounds.scss" />
+    <Content Include="web\build\scss\mixins\_cards.scss" />
+    <Content Include="web\build\scss\mixins\_custom-forms.scss" />
+    <Content Include="web\build\scss\mixins\_direct-chat.scss" />
+    <Content Include="web\build\scss\mixins\_miscellaneous.scss" />
+    <Content Include="web\build\scss\mixins\_navbar.scss" />
+    <Content Include="web\build\scss\mixins\_sidebar.scss" />
+    <Content Include="web\build\scss\mixins\_toasts.scss" />
+    <Content Include="web\build\scss\pages\_404_500_errors.scss" />
+    <Content Include="web\build\scss\pages\_e-commerce.scss" />
+    <Content Include="web\build\scss\pages\_invoice.scss" />
+    <Content Include="web\build\scss\pages\_lockscreen.scss" />
+    <Content Include="web\build\scss\pages\_login_and_register.scss" />
+    <Content Include="web\build\scss\pages\_mailbox.scss" />
+    <Content Include="web\build\scss\pages\_profile.scss" />
+    <Content Include="web\build\scss\pages\_projects.scss" />
+    <Content Include="web\build\scss\parts\_components.scss" />
+    <Content Include="web\build\scss\parts\_core.scss" />
+    <Content Include="web\build\scss\parts\_extra-components.scss" />
+    <Content Include="web\build\scss\parts\_miscellaneous.scss" />
+    <Content Include="web\build\scss\parts\_pages.scss" />
+    <Content Include="web\build\scss\parts\_plugins.scss" />
+    <Content Include="web\build\scss\plugins\_bootstrap-slider.scss" />
+    <Content Include="web\build\scss\plugins\_bootstrap-switch.scss" />
+    <Content Include="web\build\scss\plugins\_fullcalendar.scss" />
+    <Content Include="web\build\scss\plugins\_icheck-bootstrap.scss" />
+    <Content Include="web\build\scss\plugins\_jqvmap.scss" />
+    <Content Include="web\build\scss\plugins\_mapael.scss" />
+    <Content Include="web\build\scss\plugins\_miscellaneous.scss" />
+    <Content Include="web\build\scss\plugins\_mixins.scss" />
+    <Content Include="web\build\scss\plugins\_pace.scss" />
+    <Content Include="web\build\scss\plugins\_select2.scss" />
+    <Content Include="web\build\scss\plugins\_sweetalert2.scss" />
+    <Content Include="web\build\scss\plugins\_toastr.scss" />
+    <Content Include="web\build\scss\_alerts.scss" />
+    <Content Include="web\build\scss\_bootstrap-variables.scss" />
+    <Content Include="web\build\scss\_brand.scss" />
+    <Content Include="web\build\scss\_buttons.scss" />
+    <Content Include="web\build\scss\_callout.scss" />
+    <Content Include="web\build\scss\_cards.scss" />
+    <Content Include="web\build\scss\_carousel.scss" />
+    <Content Include="web\build\scss\_colors.scss" />
+    <Content Include="web\build\scss\_control-sidebar.scss" />
+    <Content Include="web\build\scss\_direct-chat.scss" />
+    <Content Include="web\build\scss\_dropdown.scss" />
+    <Content Include="web\build\scss\_elevation.scss" />
+    <Content Include="web\build\scss\_forms.scss" />
+    <Content Include="web\build\scss\_info-box.scss" />
+    <Content Include="web\build\scss\_layout.scss" />
+    <Content Include="web\build\scss\_main-header.scss" />
+    <Content Include="web\build\scss\_main-sidebar.scss" />
+    <Content Include="web\build\scss\_miscellaneous.scss" />
+    <Content Include="web\build\scss\_mixins.scss" />
+    <Content Include="web\build\scss\_modals.scss" />
+    <Content Include="web\build\scss\_navs.scss" />
+    <Content Include="web\build\scss\_print.scss" />
+    <Content Include="web\build\scss\_products.scss" />
+    <Content Include="web\build\scss\_progress-bars.scss" />
+    <Content Include="web\build\scss\_sidebar-mini.scss" />
+    <Content Include="web\build\scss\_small-box.scss" />
+    <Content Include="web\build\scss\_social-widgets.scss" />
+    <Content Include="web\build\scss\_table.scss" />
+    <Content Include="web\build\scss\_text.scss" />
+    <Content Include="web\build\scss\_timeline.scss" />
+    <Content Include="web\build\scss\_toasts.scss" />
+    <Content Include="web\build\scss\_users-list.scss" />
+    <Content Include="web\build\scss\_variables.scss" />
+    <Content Include="web\composer.json" />
+    <Content Include="web\LICENSE" />
+    <Content Include="web\package-lock.json" />
+    <Content Include="web\package.json" />
+    <Content Include="web\README.md" />
+    <Content Include="web\src\pug\layouts\authentication.pug" />
+    <Content Include="web\src\pug\layouts\dashboard.pug" />
+    <Content Include="web\src\pug\layouts\error.pug" />
+    <Content Include="web\src\pug\layouts\includes\footer.pug" />
+    <Content Include="web\src\pug\layouts\includes\head\css.pug" />
+    <Content Include="web\src\pug\layouts\includes\head\icons.pug" />
+    <Content Include="web\src\pug\layouts\includes\head\meta.pug" />
+    <Content Include="web\src\pug\layouts\includes\head\title.pug" />
+    <Content Include="web\src\pug\layouts\includes\navigation\sidenav.pug" />
+    <Content Include="web\src\pug\layouts\includes\navigation\topnav.pug" />
+    <Content Include="web\src\pug\layouts\includes\scripts.pug" />
+    <Content Include="web\src\pug\pages\401.pug" />
+    <Content Include="web\src\pug\pages\404.pug" />
+    <Content Include="web\src\pug\pages\500.pug" />
+    <Content Include="web\src\pug\pages\charts.pug" />
+    <Content Include="web\src\pug\pages\includes\datatable.pug" />
+    <Content Include="web\src\pug\pages\includes\page-header.pug" />
+    <Content Include="web\src\pug\pages\index.pug" />
+    <Content Include="web\src\pug\pages\layout-sidenav-light.pug" />
+    <Content Include="web\src\pug\pages\layout-static.pug" />
+    <Content Include="web\src\pug\pages\login.pug" />
+    <Content Include="web\src\pug\pages\password.pug" />
+    <Content Include="web\src\pug\pages\register.pug" />
+    <Content Include="web\src\pug\pages\tables.pug" />
+    <Content Include="web\src\scss\layout\_authentication.scss" />
+    <Content Include="web\src\scss\layout\_dashboard-default.scss" />
+    <Content Include="web\src\scss\layout\_dashboard-fixed.scss" />
+    <Content Include="web\src\scss\layout\_error.scss" />
+    <Content Include="web\src\scss\navigation\sidenav\_sidenav-dark.scss" />
+    <Content Include="web\src\scss\navigation\sidenav\_sidenav-light.scss" />
+    <Content Include="web\src\scss\navigation\sidenav\_sidenav.scss" />
+    <Content Include="web\src\scss\navigation\_nav.scss" />
+    <Content Include="web\src\scss\navigation\_topnav.scss" />
+    <Content Include="web\src\scss\styles.scss" />
+    <Content Include="web\src\scss\variables\_navigation.scss" />
+    <Content Include="web\src\scss\variables\_spacing.scss" />
+    <Content Include="web\src\scss\_global.scss" />
+    <Content Include="web\src\scss\_variables.scss" />
+    <Content Include="Views\Category\CategoryAdd.cshtml" />
+    <Content Include="Views\Category\CategoryFetch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -234,15 +427,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202109141842531_Migrations.resx">
-      <DependentUpon>202109141842531_Migrations.cs</DependentUpon>
-    </EmbeddedResource>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

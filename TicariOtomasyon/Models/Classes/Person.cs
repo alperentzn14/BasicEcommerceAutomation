@@ -24,7 +24,7 @@ namespace TicariOtomasyon.Models.Classes
         [StringLength(150)]
         public string PersonImage { get; set; }
 
-        public SalesMove SalesMove { get; set; }
+        public ICollection<SalesMove> SalesMoves { get; set; }
 
         public Department Department { get; set; }
     }
