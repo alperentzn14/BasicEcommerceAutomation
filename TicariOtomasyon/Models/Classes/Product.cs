@@ -28,8 +28,9 @@ namespace TicariOtomasyon.Models.Classes
         [Column(TypeName = "Varchar")]
         [StringLength(150)]
         public string ProductImage { get; set; }
+        public int CategoryId { get; set; }
 
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
       
         public ICollection<SalesMove> SalesMoves { get; set; }
     }
