@@ -12,7 +12,9 @@ namespace TicariOtomasyon.Models.Classes
         [Key]
         public int CurrentId { get; set; }
 
-
+        /// <summary>
+        /// <!--ValidationControl example-->
+        /// </summary>
         [Column(TypeName = "Varchar")]
         [StringLength(30,ErrorMessage = "max.30 character")]
         [Required(ErrorMessage ="CurrentName Required!!")]

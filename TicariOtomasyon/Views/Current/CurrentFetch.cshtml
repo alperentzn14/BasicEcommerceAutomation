@@ -9,6 +9,8 @@
 @using (Html.BeginForm("CurrentUpdate", "Current", FormMethod.Post))
             {
 <div class="form-group">
+
+    <!--ValidationControl example-->
     @Html.HiddenFor(x => x.CurrentId)
     @Html.LabelFor(x => x.CurrentName)
     @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })

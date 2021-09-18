@@ -43,7 +43,7 @@ namespace TicariOtomasyon.Controllers
         }
         public ActionResult CurrentUpdate(Current current)
         {
-            if(!ModelState.IsValid)
+            if(!ModelState.IsValid)//<!--ValidationControl example-->
             {
                 return View("CurrentFetch");
             }
