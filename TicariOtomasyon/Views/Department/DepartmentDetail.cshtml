@@ -1,0 +1,36 @@
+﻿@using TicariOtomasyon.Models.Classes
+    @model List<Person>
+@{
+    ViewBag.Title = "DepartmentDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Department Detail Page</h2><br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">DEPARTMENT NAME :@ViewBag.d</li>
+    </ol>
+      <table class="table table-hover table-bordered">
+          <tr>
+              <th>PERSON ID</th>
+              <th>PERSON NAME</th>
+              <th>PERSON SURNAME</th>
+              <th>PERSON IMAGE</th>
+              <th>HANDS</th>
+
+          </tr>
+
+          @foreach (var person in Model)
+          {
+      <tr>
+
+          <td>@person.PersonId</td>
+          <td>@person.PersonName</td>
+          <td>@person.PersonSurName</td>
+          <td>@person.PersonImage</td>
+          <td><a href="/Department/DepartmentPersonHands/@person.PersonId" class="btn btn-warning">HANDS</a></td>
+      </tr>
+
+                  }
+             
+
+          </table>

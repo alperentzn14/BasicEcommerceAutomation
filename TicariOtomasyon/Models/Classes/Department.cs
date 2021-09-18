@@ -16,6 +16,8 @@ namespace TicariOtomasyon.Models.Classes
         [StringLength(30)]
         public string DepartmantName { get; set; }
 
+        public bool Status { get; set; }
+
         public ICollection<Person> Persons { get; set; }
     }
 }

@@ -1,0 +1,37 @@
+﻿@using TicariOtomasyon.Models.Classes
+@model List<SalesMove>
+@{
+    ViewBag.Title = "CustomerSales";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">CURRENT NAME :@ViewBag.current</li>
+</ol>
+<table class="table table-condensed">
+    <tr>
+        <th>SALES ID</th>
+        <th>PERSON</th>
+        <th>PRODUCT</th>
+        <th>PRİCE</th>
+        <th>QUANTİTY</th>
+        <th>TOTAL</th>
+        <th>DATE</th>
+        <th>PRİNT</th>
+    </tr>
+    @foreach (var sales in Model)
+    {
+<tr>
+    <td>@sales.SalesMoveId</td>
+    <td>@sales.Persons.PersonName @sales.Persons.PersonSurName</td>
+    <td>@sales.Products.ProductName</td>
+    <td>@sales.Price</td>
+    <td>@sales.Quantity</td>
+    <td>@sales.Total</td>
+    <td>@sales.Date</td>
+    <td><a href="#" class="btn btn-primary">PRİNT</a></td>
+</tr>
+    }
+
+</table>
+
