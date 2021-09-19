@@ -4,35 +4,39 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<br />
-<h2>Index</h2>
+
+<h2>CURRENT PAGE</h2>
+<hr />
 <table class="table table-bordered table-hover">
 
     <tr>
-        <td>CURRENT ID</td>
-        <td>CURRENT NAME</td>
-        <td>CURRENT SURNAME</td>
-        <td>CURRENT CİTY</td>
-        <td>CURRENT E-MAİL</td>
-        <td>DELETE</td>
-        <td>UPDATE</td>
-        <td>DETAİL</td>
+        <td class="text-center">CURRENT ID</td>
+        <td class="text-center">CURRENT NAME</td>
+        <td class="text-center">CURRENT SURNAME</td>
+        <td class="text-center">CURRENT CİTY</td>
+        <td class="text-center">CURRENT E-MAİL</td>
+        <td class="text-center">DELETE</td>
+        <td class="text-center">UPDATE</td>
+        <td class="text-center">DETAİL</td>
     </tr>
     @foreach (var current in Model)
     {
 
         <tr>
-            <td>@current.CurrentId</td>
-            <td>@current.CurrentName</td>
-            <td>@current.CurrentSurName</td>
-            <td>@current.CurrentCity</td>
-            <td>@current.CurrentMail</td>
-            <td><a href="/Current/CurrentDelete/@current.CurrentId" class="btn btn-danger">DELETE</a></td>
-            <td><a href="/Current/CurrentFetch/@current.CurrentId" class="btn btn-success">UPDATE</a></td>
-            <td><a href="/Current/CustomerSales/@current.CurrentId" class="btn btn-warning">SALES DETAİL</a></td>
+            <td class="text-center">@current.CurrentId</td>
+            <td class="text-center">@current.CurrentName</td>
+            <td class="text-center">@current.CurrentSurName</td>
+            <td class="text-center">@current.CurrentCity</td>
+            <td class="text-center">@current.CurrentMail</td>
+
+
+            <td class="text-center"><a class='btn btn-danger btn-xs' href="/Current/CurrentDelete/@current.CurrentId"><span class="glyphicon glyphicon-remove"></span> DELETE</a></td>
+            <td class="text-center"><a class='btn btn-primary btn-xs' href="/Current/CurrentFetch/@current.CurrentId"><span class="glyphicon glyphicon-edit"></span>UPDATE</a></td>
+            <td class="text-center"><a class='btn btn-warning btn-xs' href="/Current/CustomerSales/@current.CurrentId"><span class="glyphicon glyphicon-list-alt"></span> SALES DETAIL</a></td>
 
         </tr>
     }
 </table>
-<a href="/Current/CurrentAdd" class="btn btn-primary">NEW  CURRENT ADD</a>
+
+<a class='btn btn-success btn-sm'  href="/Current/CurrentAdd"><span class="glyphicon glyphicon-plus"></span>NEW CURRENT ADD</a>
 

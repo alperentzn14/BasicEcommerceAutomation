@@ -27,6 +27,7 @@ namespace TicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult DepartmentAdd(Department department)
         {
+            department.Status = true;
             Context.Departments.Add(department);
             Context.SaveChanges();
             return RedirectToAction("Index");

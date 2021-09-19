@@ -1,0 +1,31 @@
+﻿@model TicariOtomasyon.Models.Classes.Person
+@{
+    ViewBag.Title = "PersonFetch";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>PERSON UPDATE PAGE</h2>
+<br />
+@using (Html.BeginForm("PersonUpdate", "Person", FormMethod.Post))
+{
+<div class="form-group">
+
+    <!--ValidationControl example-->
+    @Html.HiddenFor(x => x.PersonId)
+    @Html.LabelFor(x => x.PersonName)
+    @Html.TextBoxFor(x => x.PersonName, new { @class = "form-control" })<br />
+
+    @Html.LabelFor(x => x.PersonSurName)
+    @Html.TextBoxFor(x => x.PersonSurName, new { @class = "form-control" })<br />
+
+    @Html.LabelFor(x => x.PersonImage)
+    @Html.TextBoxFor(x => x.PersonImage, new { @class = "form-control" })<br />
+
+    @Html.LabelFor(x => x.Department)
+    @Html.DropDownListFor(x => x.DepartmentId, (List<SelectListItem>)ViewBag.vl1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">UPDATE</button>
+</div>
+}
+
+

@@ -4,26 +4,36 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<h2>DEPARTMENT PAGE</h2>
+<hr  />
 <table class="table table-bordered table-hover" style="margin-top:20px">
     <tr>
-        <th>ID</th>
-        <th>DEPARTMENT NAME</th>
-        <th>DELETE</th>
-        <th>UPDATE</th>
-        <th>DETAİL</th>
+        <th class="text-center">ID</th>
+        <th class="text-center">DEPARTMENT NAME</th>
+        <th class="text-center">DELETE</th>
+        <th class="text-center">UPDATE</th>
+        <th class="text-center">DETAİL</th>
 
     </tr>
     @foreach (var department in Model)
     {
 <tr>
-    <td>@department.DepartmentId</td>
-    <td>@department.DepartmantName</td>
-    <td><a href="/Department/DepartmentDelete/@department.DepartmentId" class="btn btn-danger">DELETE</a></td>
-    <td><a href="/Department/DepartmentFetch/@department.DepartmentId" class="btn btn-success">UPDATE</a></td>
-    <td><a href="/Department/DepartmentDetail/@department.DepartmentId" class="btn btn-warning">DETAİL</a></td>
+    <td class="text-center">@department.DepartmentId</td>
+    <td class="text-center">@department.DepartmantName</td>
+
+
+
+
+    <td class="text-center"><a class='btn btn-danger btn-xs' href="/Department/DepartmentDelete/@department.DepartmentId"><span class="glyphicon glyphicon-remove"></span> DELETE</a></td>
+    <td class="text-center"><a class='btn btn-primary btn-xs' href="/Department/DepartmentFetch/@department.DepartmentId"><span class="glyphicon glyphicon-edit"></span>UPDATE</a></td>
+    <td class="text-center"><a class='btn btn-warning btn-xs' href="/Department/DepartmentDetail/@department.DepartmentId"><span class="glyphicon glyphicon-list-alt"></span> DETAIL</a></td>
+
+
+
+
 </tr>
     }
 
 </table>
-<a href="/Department/DepartmentAdd" class="btn btn-info">NEW DEPARTMENT ADD</a>
+<a class='btn btn-success btn-sm' href="/Department/DepartmentAdd"><span class="glyphicon glyphicon-plus"></span>NEW DEPARTMENT ADD</a>
 

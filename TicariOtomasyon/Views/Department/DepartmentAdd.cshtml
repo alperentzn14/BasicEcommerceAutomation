@@ -5,11 +5,11 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<h2>DepartmentAdd</h2>
+<h2>Department Add Page</h2>
 <br />
 <form class="form-group" method="post">
     @Html.LabelFor(x => x.DepartmantName)
     @Html.TextBoxFor(x => x.DepartmantName, new { @class = "form-control" })
     <br />
-    <button class="btn btn-info">INSERT</button>
+    <button class="btn btn-success">ADD</button>
 </form>

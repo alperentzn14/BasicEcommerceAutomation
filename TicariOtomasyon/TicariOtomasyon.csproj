@@ -164,6 +164,7 @@
     <Compile Include="Controllers\CurrentController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -424,6 +425,9 @@
     <Content Include="Views\Current\CurrentAdd.cshtml" />
     <Content Include="Views\Current\CurrentFetch.cshtml" />
     <Content Include="Views\Current\CustomerSales.cshtml" />
+    <Content Include="Views\Person\Index.cshtml" />
+    <Content Include="Views\Person\PersonAdd.cshtml" />
+    <Content Include="Views\Person\PersonFetch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

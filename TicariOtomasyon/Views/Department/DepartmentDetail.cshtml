@@ -4,18 +4,18 @@
     ViewBag.Title = "DepartmentDetail";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<br />
-<h2>Department Detail Page</h2><br />
+
+<h2>Department Detail Page</h2><hr />
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">DEPARTMENT NAME :@ViewBag.d</li>
     </ol>
       <table class="table table-hover table-bordered">
           <tr>
-              <th>PERSON ID</th>
-              <th>PERSON NAME</th>
-              <th>PERSON SURNAME</th>
-              <th>PERSON IMAGE</th>
-              <th>HANDS</th>
+              <th class="text-center">PERSON ID</th>
+              <th class="text-center">PERSON NAME</th>
+              <th class="text-center">PERSON SURNAME</th>
+              <th class="text-center">PERSON IMAGE</th>
+              <th class="text-center">HANDS</th>
 
           </tr>
 
@@ -23,11 +23,12 @@
           {
       <tr>
 
-          <td>@person.PersonId</td>
-          <td>@person.PersonName</td>
-          <td>@person.PersonSurName</td>
-          <td>@person.PersonImage</td>
-          <td><a href="/Department/DepartmentPersonHands/@person.PersonId" class="btn btn-warning">HANDS</a></td>
+          <td class="text-center">@person.PersonId</td>
+          <td class="text-center">@person.PersonName</td>
+          <td class="text-center">@person.PersonSurName</td>
+          <td class="text-center">@person.PersonImage</td>
+   
+          <td class="text-center"><a class='btn btn-warning btn-xs' href="/Department/DepartmentPersonHands/@person.PersonId"><span class="glyphicon glyphicon-list-alt"></span> DETAIL</a></td>
       </tr>
 
                   }

@@ -24,6 +24,8 @@ namespace TicariOtomasyon.Models.Classes
         [StringLength(150)]
         public string PersonImage { get; set; }
 
+        public bool Status { get; set; }
+
         public ICollection<SalesMove> SalesMoves { get; set; }
         public int DepartmentId { get; set; }
         public virtual Department Department { get; set; }

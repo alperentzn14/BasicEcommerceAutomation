@@ -1,0 +1,40 @@
+﻿@using TicariOtomasyon.Models.Classes
+@model List<Person>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Persons Page</h2>
+<hr />
+<table class="table table-bordered table-hover" style="margin-top:20px">
+    <tr>
+        <th class="text-center">ID</th>
+        <th class="text-center">PERSON NAME</th>
+        <th class="text-center">PERSON SURNAME</th>
+        <th class="text-center">IMAGE</th>
+        <th class="text-center">DEPARTMENT</th>
+        <th class="text-center">DELETE</th>
+        <th class="text-center">UPDATE</th>
+        <th class="text-center">PERSON SALES</th>
+
+    </tr>
+    @foreach (var person in Model)
+    {
+<tr>
+    <td class="text-center">@person.PersonId</td>
+    <td class="text-center">@person.PersonName</td>
+    <td class="text-center">@person.PersonSurName</td>
+    <td class="text-center">@person.PersonImage</td>
+    <td class="text-center">@person.Department.DepartmantName</td>
+
+
+    <td class="text-center"><a class='btn btn-danger btn-xs' href="/Person/PersonDelete/@person.PersonId"><span class="glyphicon glyphicon-remove"></span> DELETE</a></td>
+    <td class="text-center"><a class='btn btn-primary btn-xs' href="/Person/PersonFetch/@person.PersonId"><span class="glyphicon glyphicon-edit"></span>UPDATE</a></td>
+    <td class="text-center"><a class='btn btn-warning btn-xs' href="/Department/DepartmentPersonHands/@person.PersonId"><span class="glyphicon glyphicon-list-alt"></span> PERSON SALES</a></td>
+  
+</tr>
+    }
+
+</table>
+<a class='btn btn-success btn-sm' href="/Person/PersonAdd"><span class="glyphicon glyphicon-plus"></span>NEW PERSON ADD</a>
+

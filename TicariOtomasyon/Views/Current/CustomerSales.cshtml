@@ -10,26 +10,26 @@
 </ol>
 <table class="table table-condensed">
     <tr>
-        <th>SALES ID</th>
-        <th>PERSON</th>
-        <th>PRODUCT</th>
-        <th>PRİCE</th>
-        <th>QUANTİTY</th>
-        <th>TOTAL</th>
-        <th>DATE</th>
-        <th>PRİNT</th>
+        <th class="text-center">SALES ID</th>
+        <th class="text-center">PERSON</th>
+        <th class="text-center">PRODUCT</th>
+        <th class="text-center">PRİCE</th>
+        <th class="text-center">QUANTİTY</th>
+        <th class="text-center">TOTAL</th>
+        <th class="text-center">DATE</th>
+        <th class="text-center">PRİNT</th>
     </tr>
     @foreach (var sales in Model)
     {
 <tr>
-    <td>@sales.SalesMoveId</td>
-    <td>@sales.Persons.PersonName @sales.Persons.PersonSurName</td>
-    <td>@sales.Products.ProductName</td>
-    <td>@sales.Price</td>
-    <td>@sales.Quantity</td>
-    <td>@sales.Total</td>
-    <td>@sales.Date</td>
-    <td><a href="#" class="btn btn-primary">PRİNT</a></td>
+    <td class="text-center">@sales.SalesMoveId</td>
+    <td class="text-center">@sales.Persons.PersonName @sales.Persons.PersonSurName</td>
+    <td class="text-center">@sales.Products.ProductName</td>
+    <td class="text-center">@sales.Price</td>
+    <td class="text-center">@sales.Quantity</td>
+    <td class="text-center">@sales.Total</td>
+    <td class="text-center">@sales.Date</td>
+    <td class="text-center"><a href="#" class="glyphicon glyphicon-print btn btn-lg btn-primary"></a></td>
 </tr>
     }
 

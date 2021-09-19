@@ -4,39 +4,42 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<h2>PRODUCT PAGE</h2>
+<hr />
 <table class="table table-bordered table-hover" style="margin-top:20px">
     <tr>
-        <th>PRODUCT ID</th>
-        <th>PRODUCT NAME</th>
-        <th>BRAND</th>
-        <th>STOCK</th>
-        <th>PURCHASE PRİCE</th>
-        <th>SALE PRİCE</th>
-        <th>STATUS</th>
-        <th>CATEGORY</th>
-        <th>PRODUCT IMAGE</th>
-        <th>DELETE</th>
-        <th>UPDATE</th>
+        <th class="text-center">PRODUCT ID</th>
+        <th class="text-center">PRODUCT NAME</th>
+        <th class="text-center">BRAND</th>
+        <th class="text-center">STOCK</th>
+        <th class="text-center">PURCHASE PRİCE</th>
+        <th class="text-center">SALE PRİCE</th>
+        <th class="text-center">STATUS</th>
+        <th class="text-center">CATEGORY</th>
+        <th class="text-center">PRODUCT IMAGE</th>
+        <th class="text-center">DELETE</th>
+        <th class="text-center">UPDATE</th>
 
     </tr>
     @foreach (var product in Model)
     {
 <tr>
-    <td>@product.ProductId</td>
-    <td>@product.ProductName</td>
-    <td>@product.Brand</td>
-    <td>@product.Stock</td>
-    <td>@product.PurchasePrice</td>
-    <td>@product.SalePrice</td>
-    <td>@product.Status</td>
-    <td>@product.Category.CategoryName</td>
-    <td>@product.ProductImage</td>
-    <
+    <td class="text-center">@product.ProductId</td>
+    <td class="text-center">@product.ProductName</td>
+    <td class="text-center">@product.Brand</td>
+    <td class="text-center">@product.Stock</td>
+    <td class="text-center">@product.PurchasePrice</td>
+    <td class="text-center">@product.SalePrice</td>
+    <td class="text-center">@product.Status</td>
+    <td class="text-center">@product.Category.CategoryName</td>
+    <td class="text-center">@product.ProductImage</td>
 
-    <td><a href="/Product/ProductDelete/@product.ProductId" class="btn btn-danger">DELETE</a></td>
-    <td><a href="/Product/ProductFetch/@product.ProductId" class="btn btn-success">UPDATE</a></td>
+
+    <td class="text-center"><a class='btn btn-danger btn-xs' href="/Product/ProductDelete/@product.ProductId"><span class="glyphicon glyphicon-remove"></span> DELETE</a></td>
+
+    <td class="text-center"><a class='btn btn-primary btn-xs' href="/Product/ProductFetch/@product.ProductId"><span class="glyphicon glyphicon-edit"></span>UPDATE</a></td>
 </tr>
     }
 
 </table>
-<a href="/Product/ProductAdd" class="btn btn-primary">NEW PRODUCT ADD</a>
+<a class='btn btn-success btn-sm' href="/Product/ProductAdd"><span class="glyphicon glyphicon-plus"></span>NEW PRODUCT ADD</a>

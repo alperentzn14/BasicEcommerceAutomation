@@ -4,22 +4,32 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
+<h2>CATEGORY PAGE</h2>
+<hr />
 <table class="table table-bordered table-hover" style="margin-top:20px">
     <tr>
-        <th>ID</th>
-        <th>CATEGORY NAME</th>
-        <th>DELETE</th>
-        <th>UPDATE</th>
+        <th class="text-center">ID</th>
+        <th class="text-center">CATEGORY NAME</th>
+        <th class="text-center">DELETE</th>
+        <th class="text-center">UPDATE</th>
     </tr>
     @foreach (var category in Model)
     {
 <tr>
-    <td>@category.CategoryId</td>
-    <td>@category.CategoryName</td>
-    <td><a href="/Category/CategoryDelete/@category.CategoryId" class="btn btn-danger">DELETE</a></td>
-    <td><a href="/Category/CategoryFetch/@category.CategoryId" class="btn btn-success">UPDATE</a></td>
+    <td class="text-center">@category.CategoryId</td>
+    <td class="text-center">@category.CategoryName</td>
+
+
+
+    <td class="text-center"><a class='btn btn-danger btn-xs' href="/Category/CategoryDelete/@category.CategoryId"><span class="glyphicon glyphicon-remove"></span> DELETE</a></td>
+    <td class="text-center"><a class='btn btn-primary btn-xs' href="/Category/CategoryFetch/@category.CategoryId" ><span class="glyphicon glyphicon-edit"></span>UPDATE</a></td>
+
+
+
+
 </tr>
     }
 
 </table>
-<a href="/Category/CategoryAdd" class="btn btn-primary">NEW CATEGORY ADD</a>
+<a class='btn btn-success btn-sm' href="/Category/CategoryAdd"><span class="glyphicon glyphicon-plus"></span>NEW CATEGORY ADD</a>
