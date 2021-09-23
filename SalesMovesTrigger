@@ -1,0 +1,14 @@
+Database in SalesMoves Table Create Trigger.
+USE [YOURDBBNAME]
+GO
+/****** Object:  Trigger [dbo].[SaleStockReduce]    Script Date: 23.09.2021 20:04:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Trigger [dbo].[SaleStockReduce]
+on [dbo].[SalesMoves] After insert 
+as Declare  @ProductId int 
+Declare @Quantity int 
+Select @ProductId=ProductId , @Quantity=Quantity from inserted
+Update Products set Stock=Stock-@Quantity where ProductId=@ProductId
