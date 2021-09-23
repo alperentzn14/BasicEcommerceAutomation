@@ -1,0 +1,41 @@
+﻿@using TicariOtomasyon.Models.Classes
+@model List<SalesMove>
+@{
+    ViewBag.Title = "SalesDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Sales Detail Page</h2>
+<hr />
+<br />
+<table class="table table-condensed">
+    <tr>
+        <th class="text-center">HANDS ID</th>
+        <th class="text-center">PRODUCT</th>
+        <th class="text-center">CURRENT</th>
+
+        <th class="text-center">PERSON</th>
+        <th class="text-center">PRİCE</th>
+        <th class="text-center">QUANTİTY</th>
+        <th class="text-center">TOTAL</th>
+        <th class="text-center">DATE</th>
+        <th class="text-center">PRİNT</th>
+    </tr>
+    @foreach (var sales in Model)
+    {
+        <tr>
+            <td class="text-center">@sales.SalesMoveId</td>
+            <td class="text-center">@sales.Products.ProductName</td>
+            <td class="text-center">@sales.Currents.CurrentName @sales.Currents.CurrentSurName</td>
+              <td>@sales.Persons.PersonName @sales.Persons.PersonSurName</td>
+            <td class="text-center">@sales.Price</td>
+            <td class="text-center">@sales.Quantity</td>
+            <td class="text-center">@sales.Total</td>
+            <td class="text-center">@sales.Date</td>
+            <td class="text-center"><a href="#" class="glyphicon glyphicon-print btn btn-lg btn-primary"></a></td>
+        </tr>
+    }
+
+</table>
+
+

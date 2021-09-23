@@ -1,0 +1,66 @@
+﻿@using TicariOtomasyon.Models.Classes
+@model List<SalesMove>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>New Sales Page</h2>
+<hr />
+<table class="table table-bordered table-hover" style="margin-top:20px" id="table">
+    <thead>
+        <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">PRODUCT</th>
+            <th class="text-center">CURRENT</th>
+            <th class="text-center">PERSON</th>
+            <th class="text-center">QUANTİTY</th>
+            <th class="text-center">PRİCE</th>
+            <th class="text-center">TOTAL</th>
+            <th class="text-center">DATE</th>
+            <th class="text-center">UPDATE</th>
+            <th class="text-center">DETAİL</th>
+
+        </tr>
+    </thead>
+    @foreach (var sales in Model)
+    {
+        <tr>
+            <td class="text-center">@sales.SalesMoveId</td>
+            <td class="text-center">@sales.Products.ProductName</td>
+            <td class="text-center">@sales.Currents.CurrentName@sales.Currents.CurrentSurName</td>
+            <td class="text-center">@sales.Persons.PersonName @sales.Persons.PersonSurName</td>
+            <td class="text-center">@sales.Quantity</td>
+            <td class="text-center">@sales.Price</td>
+            <td class="text-center">@sales.Total</td>
+            <td class="text-center">@sales.Date</td>
+
+
+
+            <td class="text-center"><a class='btn btn-primary btn-xs' href="/Sales/SalesFetch/@sales.SalesMoveId"><span class="glyphicon glyphicon-edit"></span> UPDATE</a></td>
+            <td class="text-center"><a class='btn btn-warning btn-xs' href="/Sales/SalesDetail/@sales.SalesMoveId"><span class="glyphicon glyphicon-list-alt"></span>SALES</a></td>
+
+        </tr>
+    }
+
+</table>
+<a class='btn btn-success btn-sm' href="/Sales/NewSales"><span class="glyphicon glyphicon-plus"></span>NEW SALES MAKE</a>
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#table').dataTable({});
+</script>
+
+
+

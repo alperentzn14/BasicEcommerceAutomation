@@ -74,5 +74,10 @@ namespace TicariOtomasyon.Controllers
             return RedirectToAction("Index");
 
         }
+        public ActionResult ProductList()
+        {
+            var values = Context.Products.ToList();
+            return View(values);
+        }
     }
 }
