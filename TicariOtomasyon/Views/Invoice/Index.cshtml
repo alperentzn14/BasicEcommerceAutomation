@@ -1,0 +1,51 @@
+﻿@using TicariOtomasyon.Models.Classes
+@model List<Invoice>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>INVOICE PAGE</h2>
+<hr />
+<table class="table table-bordered table-hover" style="margin-top:20px">
+    <tr>
+        <th class="text-center">ID</th>
+        <th class="text-center">SERİAL NUMBER</th>
+        <th class="text-center">ORDER NUMBER</th>
+        <th class="text-center">TAX OFFİCE</th>
+        <th class="text-center">DATE</th>
+        <th class="text-center">HOUR</th>
+
+        <th class="text-center">TO SUBMİT</th>
+        <th class="text-center">TO RECEİVE</th>
+        <th class="text-center">TOTAL</th>
+        <th class="text-center">UPDATE</th>
+        <th class="text-center">DETAİL</th>
+
+    </tr>
+    @foreach (var ınvoice in Model)
+    {
+<tr>
+    <td class="text-center">@ınvoice.InvoiceId</td>
+    <td class="text-center">@ınvoice.InvoiceSerialNumber</td>
+    <td class="text-center">@ınvoice.InvoiceOrderNumber</td>
+    <td class="text-center">@ınvoice.InvoiceTaxOffice</td>
+    <td class="text-center">@ınvoice.InvoiceDate</td>
+    <td class="text-center">@ınvoice.InvoiceHour</td>
+    <td class="text-center">@ınvoice.InvoiceToSubmit</td>
+    <td class="text-center">@ınvoice.InvoiceReceive</td>
+
+    <td class="text-center">@ınvoice.Total</td>
+
+
+
+    <td class="text-center"><a class='btn btn-primary btn-xs' href="/Invoice/InvoiceFetch/@ınvoice.InvoiceId"><span class="glyphicon glyphicon-edit"></span>UPDATE</a></td>
+    <td class="text-center"><a class='btn btn-warning btn-xs' href="/Invoice/InvoiceDetail/@ınvoice.InvoiceId"><span class="glyphicon glyphicon-list-alt"></span> DETAIL</a></td>
+
+</tr>
+    }
+
+</table>
+<a class='btn btn-success btn-sm' href="/Invoice/InvoiceAdd"><span class="glyphicon glyphicon-plus"></span>NEW INVOICE ADD</a>
+
+
+

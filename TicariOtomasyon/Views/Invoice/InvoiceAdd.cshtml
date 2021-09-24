@@ -1,0 +1,41 @@
+﻿@model TicariOtomasyon.Models.Classes.Invoice
+@{
+    ViewBag.Title = "InvoiceAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>New Invoice Page</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.InvoiceSerialNumber)
+    @Html.TextBoxFor(x => x.InvoiceSerialNumber, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.InvoiceOrderNumber)
+    @Html.TextBoxFor(x => x.InvoiceOrderNumber, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.InvoiceDate)
+    @Html.TextBoxFor(x => x.InvoiceDate, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.InvoiceHour)
+    @Html.TextBoxFor(x => x.InvoiceHour, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.InvoiceTaxOffice)
+    @Html.TextBoxFor(x => x.InvoiceTaxOffice, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.InvoiceToSubmit)
+    @Html.TextBoxFor(x => x.InvoiceToSubmit, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.InvoiceReceive)
+    @Html.TextBoxFor(x => x.InvoiceReceive, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success btn-lg text-center">ADD</button>
+</form>
+

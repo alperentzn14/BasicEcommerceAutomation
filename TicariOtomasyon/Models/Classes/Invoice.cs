@@ -25,7 +25,9 @@ namespace TicariOtomasyon.Models.Classes
         [StringLength(60)]
         public string InvoiceTaxOffice { get; set; }
 
-        public DateTime InvoiceHour { get; set; }
+        [Column(TypeName = "Varchar")]
+        [StringLength(5)]
+        public string InvoiceHour { get; set; }
 
 
         [Column(TypeName = "Varchar")]
@@ -35,6 +37,7 @@ namespace TicariOtomasyon.Models.Classes
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string InvoiceReceive { get; set; }
+        public decimal Total { get; set; }
 
         public ICollection<InvoicePen> InvoicePens { get; set; }
 

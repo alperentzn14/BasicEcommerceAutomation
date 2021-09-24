@@ -19,7 +19,8 @@ namespace TicariOtomasyon.Models.Classes
         public decimal InvoiceUnitPrice  { get; set; }
         public decimal InvoiceAmount  { get; set; }
 
-        public Invoice Invoice { get; set; }
+        public int InvoiceId { get; set; }
+        public virtual Invoice Invoice { get; set; }
 
     }
 }
