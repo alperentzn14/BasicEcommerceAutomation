@@ -5,35 +5,54 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <h2>DEPARTMENT PAGE</h2>
-<hr  />
-<table class="table table-bordered table-hover" style="margin-top:20px">
-    <tr>
-        <th class="text-center">ID</th>
-        <th class="text-center">DEPARTMENT NAME</th>
-        <th class="text-center">DELETE</th>
-        <th class="text-center">UPDATE</th>
-        <th class="text-center">DETAİL</th>
+<hr />
+<table class="table table-bordered table-hover" style="margin-top:20px" id="table">
+    <thead>
+        <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">DEPARTMENT NAME</th>
+            <th class="text-center">DELETE</th>
+            <th class="text-center">UPDATE</th>
+            <th class="text-center">DETAİL</th>
 
-    </tr>
+        </tr>
+    </thead>
     @foreach (var department in Model)
     {
-<tr>
-    <td class="text-center">@department.DepartmentId</td>
-    <td class="text-center">@department.DepartmantName</td>
+        <tr>
+            <td class="text-center">@department.DepartmentId</td>
+            <td class="text-center">@department.DepartmantName</td>
 
 
 
 
-    <td class="text-center"><a class='btn btn-danger btn-xs' href="/Department/DepartmentDelete/@department.DepartmentId"><span class="glyphicon glyphicon-remove"></span> DELETE</a></td>
-    <td class="text-center"><a class='btn btn-primary btn-xs' href="/Department/DepartmentFetch/@department.DepartmentId"><span class="glyphicon glyphicon-edit"></span>UPDATE</a></td>
-    <td class="text-center"><a class='btn btn-warning btn-xs' href="/Department/DepartmentDetail/@department.DepartmentId"><span class="glyphicon glyphicon-list-alt"></span> DETAIL</a></td>
+            <td class="text-center"><a class='btn btn-danger btn-xs' href="/Department/DepartmentDelete/@department.DepartmentId"><span class="glyphicon glyphicon-remove"></span> DELETE</a></td>
+            <td class="text-center"><a class='btn btn-primary btn-xs' href="/Department/DepartmentFetch/@department.DepartmentId"><span class="glyphicon glyphicon-edit"></span>UPDATE</a></td>
+            <td class="text-center"><a class='btn btn-warning btn-xs' href="/Department/DepartmentDetail/@department.DepartmentId"><span class="glyphicon glyphicon-list-alt"></span> DETAIL</a></td>
 
 
 
 
-</tr>
+        </tr>
     }
 
 </table>
 <a class='btn btn-success btn-sm' href="/Department/DepartmentAdd"><span class="glyphicon glyphicon-plus"></span>NEW DEPARTMENT ADD</a>
+
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#table').dataTable({});
+</script>
 

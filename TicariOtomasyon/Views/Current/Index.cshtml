@@ -7,7 +7,8 @@
 
 <h2>CURRENT PAGE</h2>
 <hr />
-<table class="table table-bordered table-hover">
+<table class="table table-bordered table-hover" style="margin-top:20px" id="table">
+    <thead>
 
     <tr>
         <td class="text-center">CURRENT ID</td>
@@ -19,6 +20,7 @@
         <td class="text-center">UPDATE</td>
         <td class="text-center">DETAİL</td>
     </tr>
+    </thead>
     @foreach (var current in Model)
     {
 
@@ -38,5 +40,22 @@
     }
 </table>
 
-<a class='btn btn-success btn-sm'  href="/Current/CurrentAdd"><span class="glyphicon glyphicon-plus"></span>NEW CURRENT ADD</a>
+<a class='btn btn-success btn-sm' href="/Current/CurrentAdd"><span class="glyphicon glyphicon-plus"></span>NEW CURRENT ADD</a>
+
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#table').dataTable({});
+</script>
 

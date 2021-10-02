@@ -7,29 +7,50 @@
 
 <h2>CATEGORY PAGE</h2>
 <hr />
-<table class="table table-bordered table-hover" style="margin-top:20px">
-    <tr>
-        <th class="text-center">ID</th>
-        <th class="text-center">CATEGORY NAME</th>
-        <th class="text-center">DELETE</th>
-        <th class="text-center">UPDATE</th>
-    </tr>
+
+<table class="table table-bordered table-hover" style="margin-top:20px" id="table">
+    <thead>
+        <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">CATEGORY NAME</th>
+            <th class="text-center">DELETE</th>
+            <th class="text-center">UPDATE</th>
+        </tr>
+    </thead>
     @foreach (var category in Model)
     {
-<tr>
-    <td class="text-center">@category.CategoryId</td>
-    <td class="text-center">@category.CategoryName</td>
+        <tr>
+            <td class="text-center">@category.CategoryId</td>
+            <td class="text-center">@category.CategoryName</td>
 
 
 
-    <td class="text-center"><a class='btn btn-danger btn-xs' href="/Category/CategoryDelete/@category.CategoryId"><span class="glyphicon glyphicon-remove"></span> DELETE</a></td>
-    <td class="text-center"><a class='btn btn-primary btn-xs' href="/Category/CategoryFetch/@category.CategoryId" ><span class="glyphicon glyphicon-edit"></span>UPDATE</a></td>
+            <td class="text-center"><a class='btn btn-danger btn-xs' href="/Category/CategoryDelete/@category.CategoryId"><span class="glyphicon glyphicon-remove"></span> DELETE</a></td>
+            <td class="text-center"><a class='btn btn-primary btn-xs' href="/Category/CategoryFetch/@category.CategoryId"><span class="glyphicon glyphicon-edit"></span>UPDATE</a></td>
 
 
 
 
-</tr>
+        </tr>
     }
 
 </table>
 <a class='btn btn-success btn-sm' href="/Category/CategoryAdd"><span class="glyphicon glyphicon-plus"></span>NEW CATEGORY ADD</a>
+
+
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#table').dataTable({});
+</script>

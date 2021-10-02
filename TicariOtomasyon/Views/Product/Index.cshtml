@@ -6,40 +6,60 @@
 }
 <h2>PRODUCT PAGE</h2>
 <hr />
-<table class="table table-bordered table-hover" style="margin-top:20px">
-    <tr>
-        <th class="text-center">PRODUCT ID</th>
-        <th class="text-center">PRODUCT NAME</th>
-        <th class="text-center">BRAND</th>
-        <th class="text-center">STOCK</th>
-        <th class="text-center">PURCHASE PRİCE</th>
-        <th class="text-center">SALE PRİCE</th>
-        <th class="text-center">STATUS</th>
-        <th class="text-center">CATEGORY</th>
-        <th class="text-center">PRODUCT IMAGE</th>
-        <th class="text-center">DELETE</th>
-        <th class="text-center">UPDATE</th>
+<table class="table table-bordered table-hover" style="margin-top:20px" id="table">
+    <thead>
+        <tr>
+            <th class="text-center">PRODUCT ID</th>
+            <th class="text-center">PRODUCT NAME</th>
+            <th class="text-center">BRAND</th>
+            <th class="text-center">STOCK</th>
+            <th class="text-center">PURCHASE PRİCE</th>
+            <th class="text-center">SALE PRİCE</th>
+            <th class="text-center">STATUS</th>
+            <th class="text-center">CATEGORY</th>
+            <th class="text-center">PRODUCT IMAGE</th>
+            <th class="text-center">DELETE</th>
+            <th class="text-center">UPDATE</th>
 
-    </tr>
+        </tr>
+    </thead>
     @foreach (var product in Model)
     {
-<tr>
-    <td class="text-center">@product.ProductId</td>
-    <td class="text-center">@product.ProductName</td>
-    <td class="text-center">@product.Brand</td>
-    <td class="text-center">@product.Stock</td>
-    <td class="text-center">@product.PurchasePrice</td>
-    <td class="text-center">@product.SalePrice</td>
-    <td class="text-center">@product.Status</td>
-    <td class="text-center">@product.Category.CategoryName</td>
-    <td class="text-center">@product.ProductImage</td>
+        <tr>
+            <td class="text-center">@product.ProductId</td>
+            <td class="text-center">@product.ProductName</td>
+            <td class="text-center">@product.Brand</td>
+            <td class="text-center">@product.Stock</td>
+            <td class="text-center">@product.PurchasePrice</td>
+            <td class="text-center">@product.SalePrice</td>
+            <td class="text-center">@product.Status</td>
+            <td class="text-center">@product.Category.CategoryName</td>
+            <td class="text-center">@product.ProductImage</td>
 
 
-    <td class="text-center"><a class='btn btn-danger btn-xs' href="/Product/ProductDelete/@product.ProductId"><span class="glyphicon glyphicon-remove"></span> DELETE</a></td>
+            <td class="text-center"><a class='btn btn-danger btn-xs' href="/Product/ProductDelete/@product.ProductId"><span class="glyphicon glyphicon-remove"></span> DELETE</a></td>
 
-    <td class="text-center"><a class='btn btn-primary btn-xs' href="/Product/ProductFetch/@product.ProductId"><span class="glyphicon glyphicon-edit"></span>UPDATE</a></td>
-</tr>
+            <td class="text-center"><a class='btn btn-primary btn-xs' href="/Product/ProductFetch/@product.ProductId"><span class="glyphicon glyphicon-edit"></span>UPDATE</a></td>
+        </tr>
     }
 
 </table>
 <a class='btn btn-success btn-sm' href="/Product/ProductAdd"><span class="glyphicon glyphicon-plus"></span>NEW PRODUCT ADD</a>
+
+
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#table').dataTable({});
+</script>
