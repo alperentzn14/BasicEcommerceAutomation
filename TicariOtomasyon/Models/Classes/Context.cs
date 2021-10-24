@@ -18,5 +18,7 @@ namespace TicariOtomasyon.Models.Classes
         public DbSet<Person> Persons { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<SalesMove> SalesMoves { get; set; }
+
+        public DbSet<Detail> Details { get; set; }
     }
 }
